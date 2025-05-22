@@ -1,3 +1,4 @@
+"use strict";
 // // ------------------------------------------
 // EXERCICE 1 : Créer et manipuler un tableau
 // // ------------------------------------------
@@ -190,18 +191,28 @@ const etudiants = [
 ];
 
 function trouverMeilleurEtudiant(bestEtudiants) {
-    let meilleurEtudiant = bestEtudiants[0];
-    for (i = 0; i < bestEtudiants.length; i++) {
-        let etudiantActuel = bestEtudiants[i];
-        if (etudiantActuel.note > meilleurEtudiant.note) {
-            meilleurEtudiant = etudiantActuel;
-        }
-    }return meilleurEtudiant;
-}
+    // let meilleurEtudiant = bestEtudiants[0];
+    // for (let i = 0; i < bestEtudiants.length; i++) {
+    //     let etudiantActuel = bestEtudiants[i];
+    //     if (etudiantActuel.note > meilleurEtudiant.note) {
+    //         meilleurEtudiant = etudiantActuel;
+    //     }
+    // } return meilleurEtudiant;
 
+    let bestNote = 0;
+    let bestStudent ="";
+    for (const bestEtudiant of bestEtudiants) {
+        console.log(bestEtudiant.note);
+        if (bestEtudiant.note > bestNote){
+            bestNote = bestEtudiant.note;
+            bestStudent = bestEtudiant.nom;
+        }
+
+    }
+    return bestStudent;
+}
 trouverMeilleurEtudiant(etudiants)
 console.log(trouverMeilleurEtudiant(etudiants))
-
 
 // // ------------------------------------------
 // EXERCICE 16 : Mot le plus long
